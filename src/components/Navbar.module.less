@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.44vw;
+  padding: 0 12.85vw 0 13.54vw;
+}
+
+.logo {
+  width: 6.94vw;
+}
+
+.rightPanel {
+  display: flex;
+  align-items: center;
+  height: 2.15vw;
+}
+
+.nav {
+  & > li {
+    font-size: 0.97vw;
+    line-height: 0.97vw;
+    list-style: none;
+  }
+  & > .active {
+    color: rgba(47, 84, 235, 1);
+
+    &::after {
+      content: '';
+      display: block;
+      width: 4.81vw;
+      height: 2px;
+      background: rgba(47, 84, 235, 1);
+      transform: translateY(1.53vw);
+    }
+  }
+}
+
+.split {
+  width: 1px;
+  height: 1.39vw;
+  margin: 0 1.88vw;
+  background-color: #666;
+}

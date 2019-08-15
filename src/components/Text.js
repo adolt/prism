@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import classNames from 'classnames'
 import styles from './Text.module.less'
 
 const Text = ({ className, style, onClick, children }) => {
@@ -6,7 +7,7 @@ const Text = ({ className, style, onClick, children }) => {
 
   return (
     <p
-      className={`${styles.text} ${className}`}
+      className={classNames(styles.text, className)}
       style={style}
       contentEditable={editing}
       onClick={onClick}

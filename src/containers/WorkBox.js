@@ -79,6 +79,7 @@ const WorkBox = () => {
             image={image}
             title={titleStyle}
             header={headerStyle}
+            current={materialType}
             onSelect={setMaterialType}
           />
         </Board>

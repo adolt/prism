@@ -8,11 +8,20 @@
   }
 }
 
+.hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
 .label {
   top: 1.74vw;
   left: 2.08vw;
   width: 11.11vw;
   height: 2.43vw;
+
+  &:hover {
+    &:extend(.hover);
+  }
 }
 
 .image {
@@ -20,6 +29,10 @@
   right: 0;
   width: 14.31vw;
   height: 9.72vw;
+
+  &:hover {
+    &:extend(.hover);
+  }
 }
 
 .title {
@@ -27,6 +40,10 @@
   left: 13.47vw;
   width: 20.56vw;
   height: 2.43vw;
+
+  &:hover {
+    &:extend(.hover);
+  }
 }
 
 .header {
@@ -34,4 +51,13 @@
   left: 2.08vw;
   width: 32.08vw;
   height: 3.47vw;
+
+  &:hover {
+    &:extend(.hover);
+  }
+}
+
+.active {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
 }

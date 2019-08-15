@@ -22,10 +22,34 @@ const TEXT_COLOR_ENUM = [
   '#FFAE33',
 ]
 
-const DEFAULT_TEMPLATE = {
-  bgColor: '#FFAE33',
-  label: require('./labels/activity/2.png'),
-  image: require('./materials/activity/6.png'),
+const MATERIAL_TYPE_CODE = {
+  label: 1,
+  image: 2,
 }
 
-export { BACKGROUND_COLOR_ENUM, TEXT_COLOR_ENUM, DEFAULT_TEMPLATE }
+const MATERIAL_SUBTYPE = {
+  label: ['systemNotice', 'prizeActivity', 'dadaMall'],
+  image: ['systemAnnounce', 'prizeActivity'],
+}
+
+const MATERIAL_SUBTYPE_TITLE = {
+  systemNotice: '系统通知',
+  prizeActivity: '奖励活动',
+  dadaMall: '达达商城',
+  systemAnnounce: '系统通知',
+}
+
+const DEFAULT_TEMPLATE = {
+  bgColor: '#FFAE33',
+  label: 'https://fe.imdada.cn/heron/assets/奖励活动_02.png',
+  image: 'https://fe.imdada.cn/heron/assets/活动素材_06.png',
+}
+
+export {
+  BACKGROUND_COLOR_ENUM,
+  TEXT_COLOR_ENUM,
+  MATERIAL_TYPE_CODE,
+  MATERIAL_SUBTYPE,
+  MATERIAL_SUBTYPE_TITLE,
+  DEFAULT_TEMPLATE,
+}

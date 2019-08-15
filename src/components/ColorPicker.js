@@ -3,7 +3,7 @@ import styles from './ColorPicker.module.less'
 
 const ColorPicker = ({ colorEnum, onSelect }) => (
   <div className={styles.list}>
-    {colorEnum.map(color => (
+    {colorEnum.map(({ color, pv, clickRate }) => (
       <div
         key={color}
         className={styles.color}

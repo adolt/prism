@@ -4,7 +4,7 @@ import html2canvas from 'html2canvas'
 import { DEFAULT_TEMPLATE } from '@/constants'
 import { Button } from 'antd'
 import MaterialPanel from './MaterialPanel'
-import BackgroundPanel from '../components/BackgroundPanel'
+import BackgroundPanel from './BackgroundPanel'
 import TextPropertyPanel from '../components/TextPropertyPanel'
 import Board from '../components/Board'
 import Template from '../components/Template'
@@ -47,7 +47,7 @@ const WorkBox = () => {
   }
 
   const download = useCallback(() => {
-    html2canvas(banner.current).then(canvas => {
+    html2canvas(banner.current, { useCORS: true }).then(canvas => {
       const link = document.createElement('a')
       link.setAttribute('download', 'banner.png')
       link.setAttribute(

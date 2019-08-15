@@ -31,14 +31,14 @@ const WorkBox = () => {
 
   const updateTextStyle = (property, value) => {
     if (materialType.endsWith('title')) {
-      if (titleStyle[property] === value) {
+      if (titleStyle[property] === value && property !== 'fontSize') {
         setTitleStyle(omit(titleStyle, property))
       } else {
         setTitleStyle({ ...titleStyle, [property]: value })
       }
     }
     if (materialType.endsWith('header')) {
-      if (headerStyle[property] === value) {
+      if (headerStyle[property] === value && property !== 'fontSize') {
         setHeaderStyle(omit(headerStyle, property))
       } else {
         setHeaderStyle({ ...headerStyle, [property]: value })

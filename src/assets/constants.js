@@ -13,10 +13,19 @@ const BACKGROUND_COLOR_ENUM = [
   '#D9FFE9',
 ]
 
+const TEXT_COLOR_ENUM = [
+  '#333333',
+  '#FFFFFF',
+  '#324DFA',
+  '#7B32FA',
+  '#FA4932',
+  '#FFAE33',
+]
+
 const DEFAULT_TEMPLATE = {
   bgColor: '#FFAE33',
   label: require('./labels/activity/2.png'),
   image: require('./materials/activity/6.png'),
 }
 
-export { BACKGROUND_COLOR_ENUM, DEFAULT_TEMPLATE }
+export { BACKGROUND_COLOR_ENUM, TEXT_COLOR_ENUM, DEFAULT_TEMPLATE }

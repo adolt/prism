@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { getMaterialList } from '../apis'
 import styles from './MaterialPanel.module.less'
 
-const MaterialPanel = ({ materialType, onSelect }) => {
+const MaterialPanel = ({ textEditing, materialType, onSelect }) => {
   const [materials, setMaterials] = useState({})
 
   useEffect(() => {
@@ -10,7 +10,7 @@ const MaterialPanel = ({ materialType, onSelect }) => {
     getMaterialList(materialType).then(setMaterials)
   }, [materialType])
 
-  if (!materialType) {
+  if (!materialType || textEditing) {
     return <div className={styles.container} />
   }
 

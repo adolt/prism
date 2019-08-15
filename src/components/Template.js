@@ -1,7 +1,8 @@
 import React from 'react'
+import Text from './Text'
 import styles from './Template.module.less'
 
-const Template = ({ bg, label, image, onSelect }) => {
+const Template = ({ bg, label, image, title, header, onSelect }) => {
   return (
     <div className={styles.container} style={{ backgroundColor: bg }}>
       <img
@@ -16,6 +17,20 @@ const Template = ({ bg, label, image, onSelect }) => {
         className={styles.image}
         onClick={() => onSelect('image')}
       />
+      <Text
+        className={styles.title}
+        style={title}
+        onClick={() => onSelect('text:title')}
+      >
+        点击即可编辑此区域文本
+      </Text>
+      <Text
+        className={styles.header}
+        style={header}
+        onClick={() => onSelect('text:header')}
+      >
+        点击即可编辑此区域文本
+      </Text>
     </div>
   )
 }

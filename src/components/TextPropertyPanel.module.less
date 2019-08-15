@@ -1,0 +1,29 @@
+@import '../assets/fonts/fonts.less';
+
+.container {
+  width: 16vw;
+}
+
+.header {
+  color: rgba(19, 34, 64, 1);
+  font-size: 1.11vw;
+  line-height: 1.53vw;
+  margin-bottom: 2.08vw;
+}
+
+.properties {
+  margin-top: 1vw;
+  & > div {
+    width: 100%;
+    margin-bottom: 1vw;
+  }
+}
+
+.generate-font-class(5);
+
+.generate-font-class(@n, @i: 1) when (@i =< @n) {
+  .font@{i} {
+    font-family: ~'font@{i}';
+  }
+  .generate-font-class(@n, (@i + 1));
+}

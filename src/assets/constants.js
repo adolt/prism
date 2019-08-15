@@ -43,8 +43,8 @@ const DEFAULT_TEMPLATE = {
   bgColor: '#324DFA',
   label: 'https://fe.imdada.cn/heron/assets/系统通知_02.png',
   image: 'https://fe.imdada.cn/heron/assets/通知素材_05.png',
-  titleStyle: { fontSize: 28, color: 'white' },
-  headerStyle: { fontSize: 42, color: 'white', fontFamily: 'font4' },
+  titleStyle: { fontSize: '1.944vw', color: 'white' },
+  headerStyle: { fontSize: '2.916vw', color: 'white', fontFamily: 'font4' },
 }
 
 const FONT_FAMILY_DESC = {

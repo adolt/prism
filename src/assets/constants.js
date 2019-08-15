@@ -40,9 +40,19 @@ const MATERIAL_SUBTYPE_TITLE = {
 }
 
 const DEFAULT_TEMPLATE = {
-  bgColor: '#FFAE33',
-  label: 'https://fe.imdada.cn/heron/assets/奖励活动_02.png',
-  image: 'https://fe.imdada.cn/heron/assets/活动素材_06.png',
+  bgColor: '#324DFA',
+  label: 'https://fe.imdada.cn/heron/assets/系统通知_02.png',
+  image: 'https://fe.imdada.cn/heron/assets/通知素材_05.png',
+  titleStyle: { fontSize: 28, color: 'white' },
+  headerStyle: { fontSize: 42, color: 'white', fontFamily: 'font4' },
+}
+
+const FONT_FAMILY_DESC = {
+  font1: '方正兰亭黑体',
+  font2: '方正兰亭特黑体',
+  font3: '方正锐正圆简体',
+  font4: '方正正大黑简体',
+  font5: '方正正中黑简体',
 }
 
 export {
@@ -52,4 +62,5 @@ export {
   MATERIAL_SUBTYPE,
   MATERIAL_SUBTYPE_TITLE,
   DEFAULT_TEMPLATE,
+  FONT_FAMILY_DESC,
 }

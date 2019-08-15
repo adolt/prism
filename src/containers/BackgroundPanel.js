@@ -19,7 +19,11 @@ const BackgroundPanel = ({ onSelect }) => {
     <div className={styles.container}>
       <header className={styles.header}>背景色</header>
       <Spin spinning={loading}>
-        <ColorPicker colorEnum={backgroundColors} onSelect={onSelect} />
+        <ColorPicker
+          colorEnum={backgroundColors}
+          onSelect={onSelect}
+          needTooltip
+        />
       </Spin>
     </div>
   )

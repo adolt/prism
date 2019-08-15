@@ -1,5 +1,6 @@
 import 'normalize.css'
 import 'antd/dist/antd.css'
+import '@/fonts/fonts.less'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { HashRouter as Router, Route } from 'react-router-dom'

@@ -15,8 +15,8 @@ const WorkBox = () => {
   const [bgColor, setBgColor] = useState(DEFAULT_TEMPLATE.bgColor)
   const [label, setLabel] = useState(DEFAULT_TEMPLATE.label)
   const [image, setImage] = useState(DEFAULT_TEMPLATE.image)
-  const [titleStyle, setTitleStyle] = useState({})
-  const [headerStyle, setHeaderStyle] = useState({})
+  const [titleStyle, setTitleStyle] = useState(DEFAULT_TEMPLATE.titleStyle)
+  const [headerStyle, setHeaderStyle] = useState(DEFAULT_TEMPLATE.headerStyle)
 
   const banner = useRef(null)
 

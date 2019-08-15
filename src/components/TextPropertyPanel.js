@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { TEXT_COLOR_ENUM } from '@/constants'
+import { TEXT_COLOR_ENUM, FONT_FAMILY_DESC } from '@/constants'
 import { Select, InputNumber } from 'antd'
 import ColorPicker from './ColorPicker'
 import FontStyle from './FontStyle'
@@ -38,15 +38,15 @@ const TextPropertyPanel = ({ onChange }) => {
                 key={fontFamily}
                 className={styles[fontFamily]}
               >
-                汉体
+                {FONT_FAMILY_DESC[fontFamily]}
               </SelectOption>
             )
           )}
         </Select>
         <InputNumber
-          min={12}
-          max={32}
-          defaultValue={14}
+          min={24}
+          max={46}
+          defaultValue={28}
           onChange={value => changeProperty('fontSize', value)}
         />
         <FontStyle onChange={changeProperty} />

@@ -34,7 +34,7 @@ const Template = forwardRef(
           style={title}
           onClick={() => onSelect('text:title')}
         >
-          点击即可编辑此区域文本
+          点击即可编辑此处文本
         </Text>
         <Text
           className={classNames(styles.header, {

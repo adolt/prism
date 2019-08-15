@@ -10,8 +10,10 @@ const Text = ({ className, style, onClick, children }) => {
       className={classNames(styles.text, className)}
       style={style}
       contentEditable={editing}
-      onClick={onClick}
-      onDoubleClick={() => setEditing(true)}
+      onClick={() => {
+        onClick()
+        setEditing(true)
+      }}
       onBlur={() => setEditing(false)}
     >
       {children}

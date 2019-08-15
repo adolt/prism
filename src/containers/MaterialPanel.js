@@ -51,23 +51,23 @@ const MaterialPanel = ({ textEditing, materialType, onSelect }) => {
             <div key={type} className={styles.section}>
               <p className={styles.title}>{type}</p>
               <div className={styles.content}>
-                {materials[type].map(({ id, img, clickRate, pv }) => (
-                  <Tooltip
-                    title={`曝光次数：${pv} 点击率：${clickRate}%`}
-                    key={id}
-                  >
-                    <div
-                      className={styles.material}
-                      onClick={() => onSelect(img)}
-                    >
-                      <img
-                        src={img}
-                        alt='素材'
-                        loading='lazy'
-                        className={materialClassName}
-                      />
-                    </div>
-                  </Tooltip>
+                {materials[type].map(({ id, img, click, pv, clickRate }) => (
+                  <div className={styles.item} key={id}>
+                    <Tooltip title={`曝光次数：${pv} 点击次数：${click}`}>
+                      <div
+                        className={styles.material}
+                        onClick={() => onSelect(img)}
+                      >
+                        <img
+                          src={img}
+                          alt='素材'
+                          loading='lazy'
+                          className={materialClassName}
+                        />
+                      </div>
+                    </Tooltip>
+                    <p>点击率: {clickRate}%</p>
+                  </div>
                 ))}
               </div>
             </div>

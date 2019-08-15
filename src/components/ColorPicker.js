@@ -4,9 +4,9 @@ import styles from './ColorPicker.module.less'
 
 const ColorPicker = ({ colorEnum, onSelect, needTooltip }) => (
   <div className={styles.list}>
-    {colorEnum.map(({ color, pv, clickRate }) =>
+    {colorEnum.map(({ color, pv, click }) =>
       needTooltip ? (
-        <Tooltip key={color} title={`曝光次数：${pv} 点击率：${clickRate}%`}>
+        <Tooltip key={color} title={`曝光次数：${pv} 点击次数：${click}`}>
           <div
             className={styles.color}
             style={{ backgroundColor: color }}

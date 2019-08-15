@@ -42,5 +42,5 @@
     "less-loader": "^5.0.0",
     "react-app-rewired": "^2.1.3"
   },
-  "proxy": "http://growth-shine-f0da87.ndev.imdada.cn"
+  "proxy": "https://toc-service-1f46c3.ndev.imdada.cn/toc/corp"
 }

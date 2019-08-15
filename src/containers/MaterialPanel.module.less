@@ -22,7 +22,7 @@
 
   & > .title {
     font-size: 0.83vw;
-    color: rgba(170, 170, 170, 1);
+    color: #132240;
     line-height: 1.18vw;
     margin-bottom: 0.69vw;
     margin-block-start: 0;
@@ -34,19 +34,31 @@
   }
 }
 
+.item {
+  color: #aaaaaa;
+  font-size: 0.83vw;
+  margin: 0 0.69vw 0.69vw 0;
+
+  & > p {
+    margin: 0;
+    width: 6.8vw;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
 .material {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 6.8vw;
   height: 4.6vw;
-  margin: 0 0.69vw 0.69vw 0;
   border: 1px solid rgba(220, 222, 227, 1);
   background-color: rgba(239, 242, 247, 1);
-
-  &:nth-child(2n) {
-    margin-right: 0;
-  }
 }
 
 .label {

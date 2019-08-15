@@ -71,7 +71,7 @@ const WorkBox = () => {
           materialType={materialType}
           onSelect={setMaterial}
         />
-        <Board>
+        <Board onClick={setMaterialType}>
           <Template
             ref={banner}
             bg={bgColor}

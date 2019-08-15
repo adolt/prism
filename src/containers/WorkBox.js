@@ -1,6 +1,8 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useCallback, useRef } from 'react'
 import { omit } from 'lodash-es'
+import html2canvas from 'html2canvas'
 import { DEFAULT_TEMPLATE } from '@/constants'
+import { Button } from 'antd'
 import MaterialPanel from './MaterialPanel'
 import BackgroundPanel from '../components/BackgroundPanel'
 import TextPropertyPanel from '../components/TextPropertyPanel'
@@ -15,6 +17,8 @@ const WorkBox = () => {
   const [image, setImage] = useState(DEFAULT_TEMPLATE.image)
   const [titleStyle, setTitleStyle] = useState({})
   const [headerStyle, setHeaderStyle] = useState({})
+
+  const banner = useRef(null)
 
   const setMaterial = material => {
     if (materialType === 'label') {
@@ -42,34 +46,54 @@ const WorkBox = () => {
     }
   }
 
+  const download = useCallback(() => {
+    html2canvas(banner.current).then(canvas => {
+      const link = document.createElement('a')
+      link.setAttribute('download', 'banner.png')
+      link.setAttribute(
+        'href',
+        canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream')
+      )
+      link.click()
+    })
+  }, [banner])
+
   const textEditing = useMemo(
     () => materialType && materialType.startsWith('text:'),
     [materialType]
   )
 
   return (
-    <div className={styles.container}>
-      <MaterialPanel
-        textEditing={textEditing}
-        materialType={materialType}
-        onSelect={setMaterial}
-      />
-      <Board>
-        <Template
-          bg={bgColor}
-          label={label}
-          image={image}
-          title={titleStyle}
-          header={headerStyle}
-          onSelect={setMaterialType}
+    <>
+      <div className={styles.container}>
+        <MaterialPanel
+          textEditing={textEditing}
+          materialType={materialType}
+          onSelect={setMaterial}
         />
-      </Board>
-      {textEditing ? (
-        <TextPropertyPanel onChange={updateTextStyle} />
-      ) : (
-        <BackgroundPanel onSelect={setBgColor} />
-      )}
-    </div>
+        <Board>
+          <Template
+            ref={banner}
+            bg={bgColor}
+            label={label}
+            image={image}
+            title={titleStyle}
+            header={headerStyle}
+            onSelect={setMaterialType}
+          />
+        </Board>
+        {textEditing ? (
+          <TextPropertyPanel onChange={updateTextStyle} />
+        ) : (
+          <BackgroundPanel onSelect={setBgColor} />
+        )}
+      </div>
+      <div className={styles.download}>
+        <Button type='primary' icon='download' size='large' onClick={download}>
+          下载
+        </Button>
+      </div>
+    </>
   )
 }
 

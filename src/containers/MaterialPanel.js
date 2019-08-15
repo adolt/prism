@@ -5,7 +5,7 @@ import {
   MATERIAL_SUBTYPE_TITLE,
 } from '@/constants'
 import { getMaterialList } from '../apis'
-import { Spin } from 'antd'
+import { Spin, Tooltip } from 'antd'
 import styles from './MaterialPanel.module.less'
 
 const MaterialPanel = ({ textEditing, materialType, onSelect }) => {
@@ -51,19 +51,23 @@ const MaterialPanel = ({ textEditing, materialType, onSelect }) => {
             <div key={type} className={styles.section}>
               <p className={styles.title}>{type}</p>
               <div className={styles.content}>
-                {materials[type].map(({ id, img }) => (
-                  <div
+                {materials[type].map(({ id, img, clickRate, pv }) => (
+                  <Tooltip
+                    title={`曝光次数：${pv} 点击率：${clickRate}%`}
                     key={id}
-                    className={styles.material}
-                    onClick={() => onSelect(img)}
                   >
-                    <img
-                      src={img}
-                      alt='素材'
-                      loading='lazy'
-                      className={materialClassName}
-                    />
-                  </div>
+                    <div
+                      className={styles.material}
+                      onClick={() => onSelect(img)}
+                    >
+                      <img
+                        src={img}
+                        alt='素材'
+                        loading='lazy'
+                        className={materialClassName}
+                      />
+                    </div>
+                  </Tooltip>
                 ))}
               </div>
             </div>

@@ -5,7 +5,7 @@ import styles from './User.module.less'
 const User = () => (
   <div className={styles.container}>
     <img className={styles.avatar} src={avatar} alt='头像' />
-    <span className={styles.name}>用户名</span>
+    <span className={styles.name}>第 6 组</span>
   </div>
 )
 

@@ -14,7 +14,7 @@ const MaterialPanel = ({ textEditing, materialType, onSelect }) => {
   const [loading, toggleLoading] = useState(false)
 
   useEffect(() => {
-    if (!materialType) return
+    if (textEditing || !materialType) return
 
     toggleLoading(true)
 
@@ -36,7 +36,7 @@ const MaterialPanel = ({ textEditing, materialType, onSelect }) => {
       setMaterialClassName(styles[materialType])
       toggleLoading(false)
     })
-  }, [materialType])
+  }, [materialType, textEditing])
 
   if (!materialType || textEditing) {
     return <div className={styles.container} />

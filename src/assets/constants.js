@@ -1,25 +1,25 @@
 const BACKGROUND_COLOR_ENUM = [
-  '#317DFB',
-  '#324DFA',
-  '#7B32FA',
-  '#FA4932',
-  '#FFAE33',
-  '#0BD180',
-  '#D7E6FF',
-  '#D4D9FA',
-  '#E2D4FA',
-  '#FAD9D4',
-  '#FFF0D9',
-  '#D9FFE9',
+  { color: '#317DFB' },
+  { color: '#324DFA' },
+  { color: '#7B32FA' },
+  { color: '#FA4932' },
+  { color: '#FFAE33' },
+  { color: '#0BD180' },
+  { color: '#D7E6FF' },
+  { color: '#D4D9FA' },
+  { color: '#E2D4FA' },
+  { color: '#FAD9D4' },
+  { color: '#FFF0D9' },
+  { color: '#D9FFE9' },
 ]
 
 const TEXT_COLOR_ENUM = [
-  '#333333',
-  '#FFFFFF',
-  '#324DFA',
-  '#7B32FA',
-  '#FA4932',
-  '#FFAE33',
+  { color: '#333333' },
+  { color: '#FFFFFF' },
+  { color: '#324DFA' },
+  { color: '#7B32FA' },
+  { color: '#FA4932' },
+  { color: '#FFAE33' },
 ]
 
 const MATERIAL_TYPE_CODE = {

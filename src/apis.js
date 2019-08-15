@@ -2,7 +2,7 @@ import { stringify } from 'qs'
 
 const base =
   process.env.NODE_ENV === 'production'
-    ? 'http://growth-shine-c0aabd.ndev.imdada.cn'
+    ? 'http://growth-shine-f0da87.ndev.imdada.cn'
     : ''
 
 const get = (url, params) =>

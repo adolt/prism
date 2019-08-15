@@ -29,4 +29,6 @@ const getBackgroundColorEnum = () =>
 const getMaterialList = params =>
   get('/prism/material/list', params).then(res => res || [])
 
-export { getBackgroundColorEnum, getMaterialList }
+const getBannerList = () => get('/prism/banner/list').then(res => res || [])
+
+export { getBackgroundColorEnum, getMaterialList, getBannerList }

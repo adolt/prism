@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { getBackgroundColorEnum } from '../apis'
+import { getBackgroundColorEnum, getBannerList } from '../apis'
 import { Spin } from 'antd'
 import ColorPicker from '../components/ColorPicker'
 import styles from './BackgroundPanel.module.less'
@@ -10,6 +10,7 @@ const BackgroundPanel = ({ onSelect }) => {
 
   useEffect(() => {
     toggleLoading(true)
+    getBannerList()
     getBackgroundColorEnum()
       .then(setBackgroundColors)
       .then(() => toggleLoading(false))

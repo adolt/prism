@@ -1,7 +1,12 @@
 import { stringify } from 'qs'
 
+const base =
+  process.env.NODE_ENV === 'production'
+    ? 'http://growth-shine-c0aabd.ndev.imdada.cn'
+    : ''
+
 const get = (url, params) =>
-  fetch(`${url}?${stringify(params)}`)
+  fetch(`${base}${url}?${stringify(params)}`)
     .then(response => {
       if (response.ok) {
         return response.json()

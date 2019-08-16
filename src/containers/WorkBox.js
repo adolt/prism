@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback, useRef } from 'react'
+import React, { useState, useMemo, useRef } from 'react'
 import { omit } from 'lodash-es'
 import html2canvas from 'html2canvas'
 import { DEFAULT_TEMPLATE } from '@/constants'
@@ -11,6 +11,7 @@ import Template from '../components/Template'
 import styles from './WorkBox.module.less'
 
 const WorkBox = () => {
+  const [downloading, setDownloading] = useState(false)
   const [materialType, setMaterialType] = useState()
   const [bgColor, setBgColor] = useState(DEFAULT_TEMPLATE.bgColor)
   const [label, setLabel] = useState(DEFAULT_TEMPLATE.label)
@@ -46,8 +47,13 @@ const WorkBox = () => {
     }
   }
 
-  const download = useCallback(() => {
-    html2canvas(banner.current, { useCORS: true }).then(canvas => {
+  const download = () => {
+    setDownloading(true)
+
+    html2canvas(banner.current, {
+      useCORS: true,
+      y: banner.current.offsetTop,
+    }).then(canvas => {
       const link = document.createElement('a')
       link.setAttribute('download', 'banner.png')
       link.setAttribute(
@@ -55,8 +61,10 @@ const WorkBox = () => {
         canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream')
       )
       link.click()
+
+      setDownloading(false)
     })
-  }, [banner])
+  }
 
   const textEditing = useMemo(
     () => materialType && materialType.startsWith('text:'),
@@ -90,7 +98,13 @@ const WorkBox = () => {
         )}
       </div>
       <div className={styles.download}>
-        <Button type='primary' icon='download' size='large' onClick={download}>
+        <Button
+          type='primary'
+          icon='download'
+          size='large'
+          onClick={download}
+          loading={downloading}
+        >
           下载
         </Button>
       </div>

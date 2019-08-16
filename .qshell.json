@@ -1,0 +1,6 @@
+{
+  "src_dir": "build",
+  "bucket": "dada-fe",
+  "key_prefix": "hackthon19/prism/",
+  "rescan_local": true
+}

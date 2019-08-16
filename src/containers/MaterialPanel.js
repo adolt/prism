@@ -61,7 +61,6 @@ const MaterialPanel = ({ textEditing, materialType, onSelect }) => {
                         <img
                           src={img}
                           alt='素材'
-                          loading='lazy'
                           className={materialClassName}
                         />
                       </div>
